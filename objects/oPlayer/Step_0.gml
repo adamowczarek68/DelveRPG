@@ -17,6 +17,30 @@ keyActionButton10 = keyboard_check( ord( "X" ) );
 keyActionButton11 = keyboard_check( ord( "C" ) );
 keyActionButton12 = keyboard_check( ord( "V" ) );
 
+iskeyUpPressed = keyboard_check_pressed( ord( "W" )) || keyboard_check_pressed( vk_up );
+iskeyLeftPressed = keyboard_check_pressed( ord( "A" )) || keyboard_check_pressed( vk_left );
+iskeyDownPressed = keyboard_check_pressed( ord( "S" )) || keyboard_check_pressed( vk_down );
+iskeyRightPressed = keyboard_check_pressed( ord( "D" )) || keyboard_check_pressed( vk_right );
+
+#region Corbin's direction crap.
+//If direction has just been pressed, forget the opposite direction is being held down
+if( iskeyLeftPressed ) {
+    keyboard_clear( ord( "D" ));
+    keyboard_clear( vk_right );
+}
+if( iskeyRightPressed ) {
+    keyboard_clear( ord( "A" ));
+    keyboard_clear( vk_left );
+}
+if( iskeyUpPressed ) {
+    keyboard_clear( ord( "S" ));
+    keyboard_clear( vk_down );
+}
+if( iskeyDownPressed ) {
+    keyboard_clear( ord( "W" ));
+    keyboard_clear( vk_up );
+}
+#endregion
 
 xspd = ( keyRight - keyLeft ) * mspd;
 yspd = ( keyDown - keyUp ) * mspd;

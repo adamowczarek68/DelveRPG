@@ -35,9 +35,11 @@
   },
   "name":"DelveRPG",
   "resources":[
+    {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
-    {"id":{"name":"rRoom2","path":"rooms/rRoom2/rRoom2.yy",},},
+    {"id":{"name":"rArea2","path":"rooms/rArea2/rArea2.yy",},},
+    {"id":{"name":"rCave1","path":"rooms/rCave1/rCave1.yy",},},
     {"id":{"name":"rStarting","path":"rooms/rStarting/rStarting.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
     {"id":{"name":"sBasicCave1","path":"sprites/sBasicCave1/sBasicCave1.yy",},},
@@ -49,8 +51,8 @@
     {"id":{"name":"sPlayer_Left","path":"sprites/sPlayer_Left/sPlayer_Left.yy",},},
     {"id":{"name":"sPlayer_Right","path":"sprites/sPlayer_Right/sPlayer_Right.yy",},},
     {"id":{"name":"sPlayer_Up","path":"sprites/sPlayer_Up/sPlayer_Up.yy",},},
-    {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
+    {"id":{"name":"sWarpBlock","path":"sprites/sWarpBlock/sWarpBlock.yy",},},
     {"id":{"name":"tsBasicCave1","path":"tilesets/tsBasicCave1/tsBasicCave1.yy",},},
     {"id":{"name":"tsBasicGrass3","path":"tilesets/tsBasicGrass3/tsBasicGrass3.yy",},},
     {"id":{"name":"tsBasicGreen1","path":"tilesets/tsBasicGreen1/tsBasicGreen1.yy",},},
@@ -61,7 +63,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rStarting","path":"rooms/rStarting/rStarting.yy",},},
-    {"roomId":{"name":"rRoom2","path":"rooms/rRoom2/rRoom2.yy",},},
+    {"roomId":{"name":"rArea2","path":"rooms/rArea2/rArea2.yy",},},
+    {"roomId":{"name":"rCave1","path":"rooms/rCave1/rCave1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
