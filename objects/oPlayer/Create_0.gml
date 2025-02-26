@@ -6,9 +6,9 @@ yspd = 0;
 mspd = 2;
 //Setup health.
 hp = 10;
-hp_max = hp;
+hp_max = 50;
 //I want to figure out how to ancher the healthbar to the oPlayer...
-healthbar_width = 20;
+healthbar_width = 100;
 healthbar_height = 12;
 //healthbar_x = xstart - 100;
 healthbar_x = (320/2) - (healthbar_width/2);
