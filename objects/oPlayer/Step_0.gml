@@ -22,6 +22,8 @@ iskeyLeftPressed = keyboard_check_pressed( ord( "A" )) || keyboard_check_pressed
 iskeyDownPressed = keyboard_check_pressed( ord( "S" )) || keyboard_check_pressed( vk_down );
 iskeyRightPressed = keyboard_check_pressed( ord( "D" )) || keyboard_check_pressed( vk_right );
 
+
+
 #region Corbin's direction crap.
 //If direction has just been pressed, forget the opposite direction is being held down
 if( iskeyLeftPressed ) {
