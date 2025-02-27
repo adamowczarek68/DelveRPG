@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oBombTool",
-  "eventList":[],
+  "%Name":"oHealthBar",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oBombTool",
+  "name":"oHealthBar",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBombFlashing",
-    "path":"sprites/sBombFlashing/sBombFlashing.yy",
+    "name":"sGreenHealthBarSmall",
+    "path":"sprites/sGreenHealthBarSmall/sGreenHealthBarSmall.yy",
   },
   "spriteMaskId":null,
   "visible":true,

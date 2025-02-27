@@ -28,7 +28,7 @@ global.item_list =
 		
 		function()
 			{
-			oPlayer.hp += 10;
+			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 10); //This "clamps" the HP.
 			
 			//Consume the item.
 			array_delete( inv, selected_item, 1 );
