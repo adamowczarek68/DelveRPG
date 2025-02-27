@@ -1,4 +1,8 @@
 #macro RIGHT 0
-#macro UP 1
-#macro LEFT 2
-#macro DOWN 3
+#macro UPRIGHT 1
+#macro UP 2
+#macro UPLEFT 3
+#macro LEFT 4
+#macro DOWNLEFT 5
+#macro DOWN 6
+#macro DOWNRIGHT 7
