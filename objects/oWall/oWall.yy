@@ -6,8 +6,8 @@
   "name":"oWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Doors and Walls",
+    "path":"folders/Objects/Doors and Walls.yy",
   },
   "parentObjectId":null,
   "persistent":false,

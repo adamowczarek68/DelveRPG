@@ -4,6 +4,8 @@
 //If player runs into item, it goes away from word and is "looted" to the player.
 if place_meeting( x, y, oPlayer )
 	{
-	item_add( item );
-	instance_destroy();
+	if item_add( item ) == true
+		{
+		instance_destroy();
+		}
 	}
