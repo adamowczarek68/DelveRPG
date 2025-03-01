@@ -1,0 +1,1 @@
+global.font = font_add_sprite( sDelveFont, 32, true, 1.5 );

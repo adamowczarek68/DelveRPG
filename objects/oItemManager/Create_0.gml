@@ -1,6 +1,6 @@
 depth = -9999;
 
-global.font = draw_set_font( Font1 );
+global.font = font_add_sprite( sDelveFont, 32, true, 1.5 );
 
 
 //This will creating our item constructor.
@@ -11,6 +11,9 @@ function create_item( _name, _desc, _icon, _droppable, _effect ) constructor
 	icon = _icon;
 	droppable = _droppable
 	effect = _effect;
+	//purchase = _purchase
+	//vendor = _vendor
+	//stacks = _stacks
 	//ilvl = ilvl;
 	//idnum = _id;
 	}

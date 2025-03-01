@@ -1,5 +1,5 @@
 //I want to setup a global.font and replace Font 1 with it.
-draw_set_font( Font1 );
+draw_set_font( global.font );
 
 for ( var i = 0; i < array_length( inv ); i++ )
 	{
