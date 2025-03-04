@@ -10,7 +10,7 @@ for ( var i = 0; i < array_length( inv ); i++ )
 		
 	//Item Icon.	
 	//draw_sprite( inv[i].icon, 0, _xx, _yy + _sep*i );	
-	draw_sprite( inv[i].icon, 0, camera_get_view_x( view_camera[0] ) + 16, camera_get_view_y( view_camera[0] ) + 16 );
+	draw_sprite( sItems, inv[i].icon, camera_get_view_x( view_camera[0] ) + 16, camera_get_view_y( view_camera[0] ) + 16 );
 
 	//If you mouse over the item in the inventory, it will highlight text yellow.
 	if selected_item == i { _col = c_yellow };

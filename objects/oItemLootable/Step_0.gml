@@ -25,10 +25,10 @@ switch( state ) {
 	}
 }
 
-//If player runs into item, it goes away from word and is "looted" to the player.
+//If player runs into item, it goes away from world and is "looted" to the player.
 if place_meeting( x, y, oPlayer ) && state = state_lootable.opened
 	{
-	if item_add( item ) == true
+	if oInventory.item_add( item ) == true
 		{
 		instance_destroy();
 		}

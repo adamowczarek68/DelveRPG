@@ -6,12 +6,12 @@ for ( var i = 0; i < INVENTORY_SLOTS; i += 1 )
 	var yy = y + ( i div rowLength ) * 36 + 2;
 	var hover = ( oMouseManager.inventoryHover == id ) && ( oMouseManager.slotHover == i )
 	draw_sprite( sInventorySlot, hover, xx, yy)
-	if( inventory[i] != 1 )
+	if( inventory[i] != -1 )
 		{
 		var alpha = 1.0;
 		if (oMouseManager.inventoryDrag == id ) && ( oMouseManager.slotHover == i) alpha = 0.5;
 		draw_set_alpha( alpha );
-		draw_sprite( sPlayerMove, inventory[i], xx, yy );
+		draw_sprite( sItems, inventory[i], xx, yy );
 		draw_set_alpha ( 1.0 );
 		}
 	}

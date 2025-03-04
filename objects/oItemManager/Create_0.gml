@@ -28,7 +28,7 @@ global.item_list =
 	foodBuffItem : new create_item(
 		"FBI1",
 		"Recovers health and grants buff?",
-		sYellowSwirly,
+		0,
 		true,
 		
 		function()
@@ -47,7 +47,7 @@ global.item_list =
 	foodBuffItem_half : new create_item(
 		"Half of a FBI1",
 		"Recovers some health and grants buff?",
-		sYellowSwirly_Half,
+		1,
 		true,
 		
 		function()
@@ -63,7 +63,7 @@ global.item_list =
 	bomb : new create_item(
 		"Bomb",
 		"Make big boom.",
-		sBomb,
+		2,
 		true,
 		
 		function()
@@ -79,7 +79,7 @@ global.item_list =
 	alter_fiery : new create_item(
 		"Fiery Alter",
 		"Shifts the Shimmer to a Fiery realm. The Alter is destroyed in the process.",
-		sAlter_Fiery,
+		3,
 		false,
 		
 		function()

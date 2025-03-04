@@ -4,9 +4,9 @@ function item_add( _item )
 	
 	var _pickup = false;
 	
-	if array_length( oItemManager.inv ) < oItemManager.inv_max
+	if array_length( oInventory.inventory ) < INVENTORY_SLOTS
 		{
-		array_push( oItemManager.inv, _item );
+		array_push( oInventory.inventory, _item );
 		_pickup = true;
 		}
 		
