@@ -4,12 +4,13 @@ global.font = font_add_sprite( sDelveFont, 32, true, 1.5 );
 
 
 //This will creating our item constructor.
-function create_item( _name, _desc, _icon, _droppable, _effect ) constructor
+function create_item( _name, _desc, _icon, _droppable, _consume_on_use, _effect ) constructor
 	{
 	name = _name;
 	description = _desc;
 	icon = _icon;
-	droppable = _droppable
+	droppable = _droppable;
+	consume_on_use = _consume_on_use;
 	effect = _effect;
 	//purchase = _purchase
 	//vendor = _vendor
@@ -30,16 +31,14 @@ global.item_list =
 		"Recovers health and grants buff?",
 		0,
 		true,
+		true,
 		
 		function()
 			{
 			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 5); //This "clamps" the HP.
 			
-			//Consume the item.
-			array_delete( inv, selected_item, 1 );
-			
 			//Add Half of the item.
-			array_insert( inv, selected_item, global.item_list.foodBuffItem_half ); 
+			oInventory.item_add( global.item_list.foodBuffItem_half ); 
 			}
 		
 		),
@@ -49,13 +48,11 @@ global.item_list =
 		"Recovers some health and grants buff?",
 		1,
 		true,
+		true,
 		
 		function()
 			{
 			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 5); //This "clamps" the HP.
-			
-			//Consume the item.
-			array_delete( inv, selected_item, 1 );
 			}
 		
 		),
@@ -65,14 +62,12 @@ global.item_list =
 		"Make big boom.",
 		2,
 		true,
+		true,
 		
 		function()
 		//~51:20 https://www.youtube.com/watch?v=fa26B54JDDk&t=2554s for Bomb Count associated with oPlayer.
 			{
 			instance_create_depth( oPlayer.x, oPlayer.y, 0, oBombTool );
-			
-			//Consume the item.
-			array_delete( inv, selected_item, 1 );
 			}
 		),
 		
@@ -81,6 +76,7 @@ global.item_list =
 		"Shifts the Shimmer to a Fiery realm. The Alter is destroyed in the process.",
 		3,
 		false,
+		true,
 		
 		function()
 			{
