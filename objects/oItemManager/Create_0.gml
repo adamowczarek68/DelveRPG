@@ -30,18 +30,15 @@ global.item_list =
 		"FBI1",
 		"Recovers health and grants buff?",
 		0,
-		true,
-		true,
-		
-		function()
-			{
-			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 5); //This "clamps" the HP.
-			
+		true, // droppable
+		true, // consume
+		function() {
+			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 5); //This "clamps" the HP.	
 			//Add Half of the item.
+			//show_debug_message("Health buff from FBI1 applied, adding half food buff item");
 			oInventory.item_add( global.item_list.foodBuffItem_half ); 
-			}
-		
-		),
+		}
+	),
 		
 	foodBuffItem_half : new create_item(
 		"Half of a FBI1",
@@ -50,10 +47,10 @@ global.item_list =
 		true,
 		true,
 		
-		function()
-			{
+		function() {
 			oPlayer.hp_current = min( oPlayer.hp_max, oPlayer.hp_current + 5); //This "clamps" the HP.
-			}
+			//show_debug_message("Health buff from half FBI1 applied.");
+		}
 		
 		),
 		
