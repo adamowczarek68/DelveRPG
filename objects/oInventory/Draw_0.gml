@@ -18,18 +18,20 @@ for ( var i = 0; i < INVENTORY_SLOTS; i += 1 ) {
 	
 		
 	//If the mouse is over a slot AND they Right click.
-if( oMouseManager.slotHover != -1 ) && mouse_check_button ( mb_right ){
+if( oMouseManager.slotHover != -1 ) && mouse_check_button_pressed( mb_right ){
 	var _hoverSlot = oMouseManager.slotHover;
 	
 	//Does the slot (the mouse is over) have an item.
-	if ( inventory[_hoverSlot] != undefined ){
-		
-		//Then apply effect.
-		inventory[_hoverSlot].effect();
-		
-		//If it is consumable, then remove it.
-		if ( inventory[_hoverSlot].consume_on_use ){
+	if ( inventory[_hoverSlot] != undefined ) {
+		var _item = inventory[_hoverSlot];  // save copy of item so we can use it
+		// If it is consumable, then remove it.
+		// We do this first, because some effects add items back into the
+		// inventory and so we want to have an available slot if it is full.
+		if ( inventory[_hoverSlot].consume_on_use ) {
 			inventory[_hoverSlot] = undefined;
 		}
+
+		// Use saved copy of item to apply effect.
+		_item.effect();
 	}
 }
