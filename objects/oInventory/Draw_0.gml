@@ -1,8 +1,10 @@
-draw_sprite_stretched( sInventory, 0, x-6, y-6, 12 + rowLength * 36, 12 + ((( INVENTORY_SLOTS - 1 ) div rowLength ) + 1 ) * 36 );
+var bounds = get_bounds();
+
+draw_sprite_stretched( sInventory, 0, bounds[0]-6, bounds[1]-6, bounds[2]-bounds[0], bounds[3]-bounds[1] );
 
 for ( var i = 0; i < INVENTORY_SLOTS; i += 1 ) {
-	var xx = x + ( i mod rowLength ) * 36 + 2;
-	var yy = y + ( i div rowLength ) * 36 + 2;
+	var xx = bounds[0] + ( i mod rowLength ) * slotSize + 2;
+	var yy = bounds[1] + ( i div rowLength ) * slotSize + 2;
 	var hover = ( oMouseManager.inventoryHover == id ) && ( oMouseManager.slotHover == i );
 	draw_sprite( sInventorySlot, hover, xx, yy);
 	if( inventory[i] != undefined )	{
@@ -14,8 +16,9 @@ for ( var i = 0; i < INVENTORY_SLOTS; i += 1 ) {
 	}
 }
 	
-// Handle right-clicking when a slot is hovered (ie, player is using an item)
-if (( oMouseManager.slotHover != -1 ) && mouse_check_button_pressed( mb_right )) {
+		
+	//If the mouse is over a slot AND they Right click.
+if( oMouseManager.slotHover != -1 ) && mouse_check_button_pressed( mb_right ){
 	var _hoverSlot = oMouseManager.slotHover;
 	
 	//Does the slot (the mouse is over) have an item.
@@ -27,7 +30,7 @@ if (( oMouseManager.slotHover != -1 ) && mouse_check_button_pressed( mb_right ))
 		if ( inventory[_hoverSlot].consume_on_use ) {
 			inventory[_hoverSlot] = undefined;
 		}
-			
+
 		// Use saved copy of item to apply effect.
 		_item.effect();
 	}

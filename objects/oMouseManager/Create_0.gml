@@ -16,15 +16,15 @@ mouseOver = function()
 	var my = mouse_y;
 	
 	//check for inventory slot hover
-	with ( oInventory )
-		{
-		if ( point_in_rectangle( mx, my, x-6, y-6, x-6 + 12 + rowLength * 36, y-6 + 12 + (((INVENTORY_SLOTS - 1) div rowLength) + 1) * 36 ) )
-			{
+	with ( oInventory )	{
+		var bounds = get_bounds();
+		
+		if ( point_in_rectangle( mx, my, bounds[0], bounds[1], bounds[2], bounds[3] ) )	{
 			//check for mouseover in each slot
 			for ( var i = 0; i < INVENTORY_SLOTS; i += 1 )
 				{
-				var xx = x + ( i mod rowLength ) * 36 + 2;
-				var yy = y + ( i div rowLength ) * 36 + 2;
+				var xx = bounds[0] + ( i mod rowLength ) * 36 + 2;
+				var yy = bounds[1]  + ( i div rowLength ) * 36 + 2;
 				if ( point_in_rectangle( mx, my, xx, yy, xx + 32, yy + 32 ) )
 					{
 					other.slotHover = i; //other bc we are in a with statement
