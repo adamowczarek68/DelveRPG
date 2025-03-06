@@ -16,6 +16,8 @@ keyActionButton9 = keyboard_check( ord( "Z" ) );
 keyActionButton10 = keyboard_check( ord( "X" ) );
 keyActionButton11 = keyboard_check( ord( "C" ) );
 keyActionButton12 = keyboard_check( ord( "V" ) );
+keyToggleInventory = keyboard_check_pressed( ord( "B" ) );
+keyToggleHealthBar = keyboard_check_pressed( ord( "P" ) );
 
 isKeyUpPressed = keyboard_check_pressed( ord( "W" )) || keyboard_check_pressed( vk_up );
 isKeyLeftPressed = keyboard_check_pressed( ord( "A" )) || keyboard_check_pressed( vk_left );
@@ -44,7 +46,11 @@ if( isKeyDownPressed ) {
 
 
 #region Toggles
-if (keyboard_check_pressed(ord("P"))) {
+if (keyToggleHealthBar) {
 	oHealthBar.visible = !oHealthBar.visible;
+}
+
+if (keyToggleInventory) {
+	oInventory.visible = !oInventory.visible;
 }
 #endregion
